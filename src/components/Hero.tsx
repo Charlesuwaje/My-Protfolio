@@ -5,7 +5,7 @@ interface HeroProps {
   onNavigate: (section: string) => void;
 }
 
-const ROLES = ["Backend Engineer", "DevOps Specialist", "API Architect", "Fintech Builder"];
+const ROLES = ["Backend Engineer", "DevOps Specialist", "API Architect", "Fintech Builder", "Team Player"];
 
 const SOCIALS = [
   {
@@ -25,6 +25,12 @@ const SOCIALS = [
   },
 ];
 
+const STATS = [
+  { value: "5+", label: "Years Exp." },
+  { value: "8+", label: "Projects" },
+  { value: "3", label: "Countries" },
+];
+
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   const typed = useTypewriter(ROLES, 80, 2200);
 
@@ -36,162 +42,248 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         display: "flex",
         alignItems: "center",
         padding: "80px 24px 60px",
-        maxWidth: 1000,
+        maxWidth: 1100,
         margin: "0 auto",
       }}
     >
-      <div style={{ width: "100%" }}>
-        {/* Available pill */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            background: "rgba(0,212,170,0.08)",
-            border: "1px solid rgba(0,212,170,0.3)",
-            borderRadius: 20,
-            padding: "5px 14px",
-            marginBottom: 28,
-            fontSize: 11,
-            color: "#00D4AA",
-            letterSpacing: 1,
-            fontWeight: 600,
-          }}
-        >
-          <span className="pulse-dot" />
-          AVAILABLE FOR OPPORTUNITIES
-        </div>
+      {/* ── Two-column layout ── */}
+      <div style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: 48,
+        width: "100%",
+        flexWrap: "wrap",
+      }}>
 
-        <div style={{ fontSize: 13, color: "#64748B", letterSpacing: 2, marginBottom: 12 }}>
-       
-        </div>
+        {/* ── LEFT: Text content ── */}
+        <div style={{ flex: "1 1 480px", minWidth: 0 }}>
+          {/* Available pill */}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            background: "rgba(0,212,170,0.08)", border: "1px solid rgba(0,212,170,0.3)",
+            borderRadius: 20, padding: "5px 14px", marginBottom: 28,
+            fontSize: 11, color: "#00D4AA", letterSpacing: 1, fontWeight: 600,
+          }}>
+            <span className="pulse-dot" />
+            AVAILABLE FOR OPPORTUNITIES
+          </div>
 
-        <h1
-          style={{
-            fontSize: "clamp(40px,7vw,80px)",
+          <h1 style={{
+            fontSize: "clamp(40px,6vw,76px)",
             fontWeight: 800,
             lineHeight: 1.05,
-            marginBottom: 16,
             margin: "0 0 16px 0",
-          }}
-        >
-          <span style={{ color: "#E2E8F0" }}>CHARLES</span>
-          <br />
-          <span style={{ color: "#00D4AA" }}>UWAJE</span>
-        </h1>
+          }}>
+            <span style={{ color: "#E2E8F0" }}>CHARLES</span>
+            <br />
+            <span style={{ color: "#00D4AA" }}>UWAJE</span>
+          </h1>
 
-        {/* Typewriter */}
-        <div
-          style={{
-            fontSize: "clamp(16px,2.5vw,22px)",
-            color: "#94A3B8",
-            marginBottom: 24,
-            minHeight: 36,
-            fontWeight: 500,
-          }}
-        >
-          <span style={{ color: "#00D4AA" }}>{">"}</span>{" "}
-          <span style={{ color: "#E2E8F0" }}>{typed}</span>
-          <span className="cursor-blink" style={{ color: "#00D4AA" }}>_</span>
-        </div>
+          {/* Typewriter */}
+          <div style={{
+            fontSize: "clamp(15px,2.2vw,20px)",
+            color: "#94A3B8", marginBottom: 20,
+            minHeight: 32, fontWeight: 500,
+          }}>
+            <span style={{ color: "#00D4AA" }}>{">"}</span>{" "}
+            <span style={{ color: "#E2E8F0" }}>{typed}</span>
+            <span className="cursor-blink" style={{ color: "#00D4AA" }}>_</span>
+          </div>
 
-        <p
-          style={{
-            fontSize: 15,
-            color: "#64748B",
-            maxWidth: 560,
-            lineHeight: 1.8,
-            marginBottom: 36,
-          }}
-        >
-          5+ years architecting scalable backend systems across fintech, logistics, and HR
-          platforms. Specialized in PHP Laravel, Node.js, Microservices, and DevOps —
-          delivering enterprise-grade solutions across Nigeria, UK, and Canada.
-        </p>
+          <p style={{
+            fontSize: 14, color: "#64748B",
+            maxWidth: 500, lineHeight: 1.85, marginBottom: 32,
+          }}>
+            5+ years architecting scalable backend systems across fintech, logistics, and HR
+            platforms. Specialized in PHP Laravel, Node.js, Microservices, and DevOps —
+            delivering enterprise-grade solutions across Nigeria, UK, and Canada.
+          </p>
 
-        {/* CTAs */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 40 }}>
-          <button
-            onClick={() => onNavigate("Projects")}
-            className="btn-primary"
-            style={{
-              padding: "12px 28px",
-              borderRadius: 8,
-              border: "none",
-              cursor: "pointer",
-              background: "#00D4AA",
-              color: "#0A0F1E",
-              fontSize: 13,
-              fontWeight: 700,
-              fontFamily: "inherit",
-              letterSpacing: 1,
-            }}
-          >
-            VIEW PROJECTS →
-          </button>
-          <a
-            href="mailto:charlesuwaje02@gmail.com"
-            className="btn-outline"
-            style={{
-              padding: "12px 28px",
-              borderRadius: 8,
-              border: "1px solid #1e3a5f",
-              background: "transparent",
-              color: "#94A3B8",
-              fontSize: 13,
-              fontWeight: 700,
-              fontFamily: "inherit",
-              letterSpacing: 1,
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-          >
-            CONTACT ME
-          </a>
-        </div>
+          {/* Stats row */}
+          <div style={{ display: "flex", gap: 24, marginBottom: 32 }}>
+            {STATS.map((s, i) => (
+              <div key={i} style={{ textAlign: "center" }}>
+                <div style={{ fontSize: 24, fontWeight: 800, color: "#00D4AA", lineHeight: 1 }}>
+                  {s.value}
+                </div>
+                <div style={{ fontSize: 10, color: "#475569", marginTop: 4, letterSpacing: 1, fontWeight: 600 }}>
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
 
-        {/* Socials */}
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          {SOCIALS.map((s) => (
-            <a
-              key={s.label}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={s.label}
-              className="social-btn"
+          {/* CTAs */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 36 }}>
+            <button
+              onClick={() => onNavigate("Projects")}
+              className="btn-primary"
               style={{
-                width: 38,
-                height: 38,
-                borderRadius: 8,
-                border: "1px solid #1e293b",
-                background: "rgba(30,41,59,0.5)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#64748B",
-                textDecoration: "none",
+                padding: "11px 26px", borderRadius: 8, border: "none",
+                cursor: "pointer", background: "#00D4AA", color: "#0A0F1E",
+                fontSize: 12, fontWeight: 700, fontFamily: "inherit", letterSpacing: 1,
               }}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              >
-                <path d={s.path} />
-              </svg>
+              VIEW PROJECTS →
+            </button>
+            <a
+              href="mailto:charlesuwaje02@gmail.com"
+              className="btn-outline"
+              style={{
+                padding: "11px 26px", borderRadius: 8,
+                border: "1px solid #1e3a5f", background: "transparent",
+                color: "#94A3B8", fontSize: 12, fontWeight: 700,
+                fontFamily: "inherit", letterSpacing: 1,
+                textDecoration: "none", display: "inline-flex", alignItems: "center",
+              }}
+            >
+              CONTACT ME
             </a>
-          ))}
-          <span style={{ fontSize: 11, color: "#334155", marginLeft: 4 }}>
-            Lagos, Nigeria · Open to Relocation
-          </span>
+          </div>
+
+          {/* Socials */}
+          <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+            {SOCIALS.map((s) => (
+              <a
+                key={s.label}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={s.label}
+                className="social-btn"
+                style={{
+                  width: 36, height: 36, borderRadius: 8,
+                  border: "1px solid #1e293b", background: "rgba(30,41,59,0.5)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  color: "#64748B", textDecoration: "none",
+                }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <path d={s.path} />
+                </svg>
+              </a>
+            ))}
+            {/* <span style={{ fontSize: 11, color: "#334155", marginLeft: 4 }}> */}
+            <span style={{ fontSize: 11, color: "#ffff", marginLeft: 4 }}>
+
+              Lagos, Nigeria · Open to Relocation
+            </span>
+          </div>
         </div>
+
+        {/* ── RIGHT: Profile image ── */}
+        <div style={{
+          flex: "0 0 auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 16,
+        }}>
+          {/* Outer glow ring */}
+          <div style={{
+            position: "relative",
+            width: 280,
+            height: 280,
+          }}>
+            {/* Rotating dashed border */}
+            <div style={{
+              position: "absolute", inset: -6,
+              borderRadius: "50%",
+              border: "1.5px dashed rgba(0,212,170,0.35)",
+              animation: "spin 18s linear infinite",
+            }} />
+
+            {/* Teal accent ring */}
+            <div style={{
+              position: "absolute", inset: 0,
+              borderRadius: "50%",
+              border: "2px solid rgba(0,212,170,0.2)",
+            }} />
+
+            {/* Image container */}
+            <div style={{
+              width: "100%", height: "100%",
+              borderRadius: "50%",
+              overflow: "hidden",
+              background: "linear-gradient(135deg, #0d1526 0%, #1e293b 100%)",
+              border: "3px solid #0d1526",
+              position: "relative",
+              zIndex: 1,
+            }}>
+              
+                <img
+                  src="/charles uwaje picture.jpeg"
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+             
+              <div style={{
+                width: "100%", height: "100%",
+                display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center", gap: 8,
+              }}>
+                {/* Placeholder avatar */}
+                <div style={{
+                  width: 80, height: 80, borderRadius: "50%",
+                  background: "rgba(0,212,170,0.15)",
+                  border: "2px solid rgba(0,212,170,0.3)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 28, fontWeight: 800, color: "#00D4AA",
+                }}>
+                  CU
+                </div>
+                <div style={{ fontSize: 10, color: "#334155", letterSpacing: 1, textAlign: "center" }}>
+                 
+                  <br />
+                  <span style={{ fontSize: 9, color: "#1e3a5f" }}>passionate in what i do </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating badge — top right */}
+            <div style={{
+              position: "absolute", top: 12, right: -8, zIndex: 2,
+              background: "#0d1526", border: "1px solid rgba(0,212,170,0.3)",
+              borderRadius: 8, padding: "5px 10px",
+              fontSize: 10, fontWeight: 700, color: "#00D4AA", letterSpacing: 0.5,
+              whiteSpace: "nowrap",
+            }}>
+              {"</>"} Backend
+            </div>
+
+            {/* Floating badge — bottom left */}
+            <div style={{
+              position: "absolute", bottom: 16, left: -16, zIndex: 2,
+              background: "#0d1526", border: "1px solid rgba(245,158,11,0.3)",
+              borderRadius: 8, padding: "5px 10px",
+              fontSize: 10, fontWeight: 700, color: "#F59E0B", letterSpacing: 0.5,
+              whiteSpace: "nowrap",
+            }}>
+              ☁ DevOps
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <style>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @media (max-width: 700px) {
+          #About > div {
+            flex-direction: column-reverse !important;
+            align-items: center !important;
+          }
+          #About > div > div:last-child > div {
+            width: 200px !important;
+            height: 200px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
