@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0A0F1E;
+  color: #E2E8F0;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.portfolio-root {
+  background: #0A0F1E;
+  min-height: 100vh;
+  position: relative;
+}
+
+.dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #0a0f1e;
+}
+*::-webkit-scrollbar { width: 6px; }
+*::-webkit-scrollbar-track { background: #0a0f1e; }
+*::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+*::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00D4AA;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Nav responsive */
+.nav-desktop {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-mobile-btn {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav-desktop {
+    display: none;
+  }
+  .nav-mobile-btn {
+    display: block !important;
+  }
+}
+
+/* Hover states */
+.btn-primary:hover {
+  background: #00bfa0 !important;
+  transform: translateY(-1px);
+}
+
+.btn-outline:hover {
+  border-color: #00D4AA !important;
+  color: #00D4AA !important;
+}
+
+.social-btn:hover {
+  border-color: #00D4AA !important;
+  color: #00D4AA !important;
+}
+
+.skill-card:hover {
+  border-color: rgba(0, 212, 170, 0.25) !important;
+}
+
+.contact-link:hover {
+  border-color: rgba(0, 212, 170, 0.3) !important;
+  color: #E2E8F0 !important;
+}
+
+.ext-link:hover {
+  border-color: #00D4AA !important;
+  color: #00D4AA !important;
+}
+
+/* Section reveal animation */
+section {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
