@@ -142,7 +142,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1EMZNFX_LP0_oZPU8BFiJ8JBgvxFIsglz/view?usp=share_link"
+              href="https://drive.google.com/file/d/1EMZNFX_LP0_oZPU8BFiJ8JBgvxFIsglz/view?usp=drive_link"
               className="btn-outline"
               style={{
                 padding: "11px 26px", borderRadius: 8,
