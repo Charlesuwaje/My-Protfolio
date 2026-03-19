@@ -140,6 +140,20 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             >
               CONTACT ME
             </a>
+
+            <a
+              href="https://drive.google.com/file/d/1EMZNFX_LP0_oZPU8BFiJ8JBgvxFIsglz/view?usp=share_link"
+              className="btn-outline"
+              style={{
+                padding: "11px 26px", borderRadius: 8,
+                border: "1px solid #1e3a5f", background: "transparent",
+                color: "#94A3B8", fontSize: 12, fontWeight: 700,
+                fontFamily: "inherit", letterSpacing: 1,
+                textDecoration: "none", display: "inline-flex", alignItems: "center",
+              }}
+            >
+              Download My CV
+            </a>
           </div>
 
           {/* Socials */}
@@ -212,13 +226,13 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               position: "relative",
               zIndex: 1,
             }}>
-              
-                <img
-                  src="/charles uwaje picture.jpeg"
-                  alt=""
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-             
+
+              <img
+                src="/charles uwaje picture.jpeg"
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+
               <div style={{
                 width: "100%", height: "100%",
                 display: "flex", flexDirection: "column",
@@ -235,7 +249,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                   CU
                 </div>
                 <div style={{ fontSize: 10, color: "#334155", letterSpacing: 1, textAlign: "center" }}>
-                 
+
                   <br />
                   <span style={{ fontSize: 9, color: "#1e3a5f" }}>passionate in what i do </span>
                 </div>
