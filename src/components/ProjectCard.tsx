@@ -19,6 +19,23 @@ const GitHubIcon = () => (
   </svg>
 );
 
+const ExternalLinkIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ project: p }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -70,19 +87,36 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project: p }) => {
           <div style={{ fontSize: 15, fontWeight: 700, color: "#E2E8F0" }}>{p.name}</div>
         </div>
 
-        {p.github && (
-          <a
-            href={p.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="View on GitHub"
-            style={{ color: "#475569", transition: "color 0.2s", textDecoration: "none" }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = p.color; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#475569"; }}
-          >
-            <GitHubIcon />
-          </a>
-        )}
+        {/* Icons row */}
+        <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          {p.github && (
+            <a
+              href={p.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View on GitHub"
+              style={{ color: "#475569", transition: "color 0.2s", textDecoration: "none" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = p.color; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#475569"; }}
+            >
+              <GitHubIcon />
+            </a>
+          )}
+
+          {p.live && (
+            <a
+              href={p.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View live site"
+              style={{ color: "#475569", transition: "color 0.2s", textDecoration: "none" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = p.color; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#475569"; }}
+            >
+              <ExternalLinkIcon />
+            </a>
+          )}
+        </div>
       </div>
 
       {/* Description */}

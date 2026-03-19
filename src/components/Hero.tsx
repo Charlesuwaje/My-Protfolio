@@ -27,7 +27,7 @@ const SOCIALS = [
 
 const STATS = [
   { value: "5+", label: "Years Exp." },
-  { value: "8+", label: "Projects" },
+  { value: "12+", label: "Projects" },
   { value: "3", label: "Countries" },
 ];
 
