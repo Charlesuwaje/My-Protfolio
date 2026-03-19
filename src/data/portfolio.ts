@@ -3,7 +3,7 @@ export const NAV_LINKS = ["About", "Skills", "Experience", "Projects", "Contact"
 export const SKILLS: Record<string, string[]> = {
   "Languages & Frameworks": ["PHP (Laravel)", "Node.js (Express)", "JavaScript ES6+", "React", "HTML5 / CSS3"],
   Databases: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
-  "DevOps & Tools": ["Docker", "AWS", "CI/CD Pipelines", "Git / GitHub", "Postman", "Swagger"],
+  "DevOps & Tools": ["Docker", "AWS", "CI/CD Pipelines", "Git / GitHub", "Postman", "Swagger","Heroku","azure","forge","DigitalOcean"],
   Architecture: ["RESTful APIs", "Microservices", "Agile (Jira, ClickUp)", "Unit Testing", "QA Leadership"],
 };
 
